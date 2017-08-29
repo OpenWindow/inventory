@@ -11,6 +11,7 @@
 /tmp
 /out-tsc
 */**/obj
+*/**/bin
 
 # dependencies
 /node_modules
@@ -50,4 +51,4 @@ testem.log
 Thumbs.db
 
 
-
+/InventoryAngular/node_modules/live-server/node_modules
