@@ -17,7 +17,7 @@ namespace InventoryAngular
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +36,6 @@ namespace InventoryAngular
           await next();
         }
       });
-
-
-      // Configures application for usage as API
-      // with default route of '/api/[controller]'
-      app.UseMvcWithDefaultRoute();
 
       // Configures application to serve the index.html file from /wwwroot
       // when you access the server from a web browser

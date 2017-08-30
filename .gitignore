@@ -1,9 +1,17 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # compiled output
 /dist
 /tmp
 /out-tsc
+*/**/obj
+*/**/bin
 
 # dependencies
 /node_modules
@@ -19,6 +27,7 @@
 
 # IDE - VSCode
 .vscode/*
+.vs/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -40,3 +49,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+/InventoryAngular/node_modules/live-server/node_modules
