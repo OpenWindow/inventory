@@ -12,7 +12,7 @@ namespace Inventory.Business.Data
 
         }
 
-        public DbSet<InventoryCategory> InventoryCategory { get; set; }
+        public DbSet<InventoryCategory> InventoryCategories { get; set; }
         public DbSet<InventoryItem> InventoryItems { get; set; }
         public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
 
