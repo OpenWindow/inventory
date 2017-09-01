@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Inventory.Business.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Inventory.Business.Data;
 
 namespace Inventory.Api
 {
@@ -30,9 +31,10 @@ namespace Inventory.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<InventoryContext>( opt => opt.UseInMemoryDatabase("Inventory"));
-            services.AddWebApi();
+            services.AddDbContext<InventoryContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddWebApi();
 
             services.AddSingleton<IConfigurationRoot>(Configuration);
         }
