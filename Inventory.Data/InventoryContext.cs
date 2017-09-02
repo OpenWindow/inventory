@@ -1,7 +1,7 @@
-﻿using Inventory.Business.Models;
+﻿using Inventory.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Inventory.Business.Data
+namespace Inventory.Data
 {
     public class InventoryContext : DbContext
     {

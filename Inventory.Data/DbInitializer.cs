@@ -1,10 +1,10 @@
-﻿using Inventory.Business.Models;
+﻿using Inventory.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Inventory.Business.Data
+namespace Inventory.Data
 {
     public static class DbInitializer
     {

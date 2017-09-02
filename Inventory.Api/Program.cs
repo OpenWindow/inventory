@@ -1,4 +1,4 @@
-﻿using Inventory.Business.Data;
+﻿using Inventory.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;

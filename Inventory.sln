@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryAngular", "InventoryAngular\InventoryAngular.csproj", "{A2257933-26D3-4E86-8D79-A16A54C920DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryAngular", "InventoryAngular\InventoryAngular.csproj", "{A2257933-26D3-4E86-8D79-A16A54C920DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Api", "Inventory.Api\Inventory.Api.csproj", "{F2022458-B1A3-4C50-A13B-0355EB85E202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Api", "Inventory.Api\Inventory.Api.csproj", "{F2022458-B1A3-4C50-A13B-0355EB85E202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Business", "Inventory.Business\Inventory.Business.csproj", "{C3308914-EB7B-449E-9603-C5ECEB06B7A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Data", "Inventory.Data\Inventory.Data.csproj", "{55F472B6-0CDE-4074-9073-DFADFA86964B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +23,15 @@ Global
 		{F2022458-B1A3-4C50-A13B-0355EB85E202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2022458-B1A3-4C50-A13B-0355EB85E202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2022458-B1A3-4C50-A13B-0355EB85E202}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3308914-EB7B-449E-9603-C5ECEB06B7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3308914-EB7B-449E-9603-C5ECEB06B7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3308914-EB7B-449E-9603-C5ECEB06B7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3308914-EB7B-449E-9603-C5ECEB06B7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F472B6-0CDE-4074-9073-DFADFA86964B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F472B6-0CDE-4074-9073-DFADFA86964B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F472B6-0CDE-4074-9073-DFADFA86964B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F472B6-0CDE-4074-9073-DFADFA86964B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B7D2525-77AA-40C9-BF2E-3E731F592410}
 	EndGlobalSection
 EndGlobal
