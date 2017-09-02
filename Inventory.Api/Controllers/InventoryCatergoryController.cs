@@ -15,15 +15,15 @@ namespace Inventory.Api.Controllers
 
         private readonly InventoryContext _context;
 
-        //public InventoryCatergoryController(InventoryContext context)
-        //{
-        //    this._context = context;
-        //}
+        public InventoryCatergoryController(InventoryContext context)
+        {
+            this._context = context;
+        }
 
-        //[HttpGet("")]
-        //public async Task<IEnumerable<InventoryCategory>> Get(int page = -1, int pageSize = 15)
-        //{
-        //    return Ok();
-        //}
+        [HttpGet("")]
+        public async Task<IEnumerable<InventoryCategory>> Get(int page = -1, int pageSize = 15)
+        {
+            return Ok();
+        }
     }
 }
