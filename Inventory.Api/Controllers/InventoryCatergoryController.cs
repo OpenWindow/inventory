@@ -9,7 +9,7 @@ using Inventory.Data.Models;
 
 namespace Inventory.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categories")]
     public class InventoryCatergoryController : ControllerBase
     {
 
@@ -21,9 +21,23 @@ namespace Inventory.Api.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IEnumerable<InventoryCategory>> Get(int page = -1, int pageSize = 15)
+        public IActionResult Get(int page = -1, int pageSize = 15)
         {
-            return Ok();
+
+            //TO DO: implement paging
+            return Ok(_context.InventoryCategories);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetCategory(int id)
+        {
+            var category = _context.InventoryCategories.FirstOrDefault(c => c.ID == id);
+            if(category == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(category);
         }
     }
 }

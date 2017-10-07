@@ -17,7 +17,7 @@ namespace Inventory.Api
     public class Startup
     {
         IConfigurationRoot Configuration { get; }
-        
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -34,6 +34,8 @@ namespace Inventory.Api
             services.AddDbContext<InventoryContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            // Composition root (creating object graphs)
+
             services.AddWebApi();
 
             services.AddSingleton<IConfigurationRoot>(Configuration);
@@ -47,6 +49,10 @@ namespace Inventory.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler();
             }
 
             // Just add unparameterized version of UseMvc method which

@@ -10,7 +10,7 @@ namespace Inventory.Data.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<InventoryItem> InventoryItems { get; set; }
+        public ICollection<InventoryItem> InventoryItems { get; set; } = new List<InventoryItem>();
 
         public byte[] RowVersion { get; set; }
     }
