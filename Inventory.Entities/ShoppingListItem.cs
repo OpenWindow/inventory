@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Inventory.Data.Models
+namespace Inventory.Entities
 {
     public enum UnitOfMeasurement
     {
-        none, lbs, gallons, oz, kgs, @case, unit
+        none,
+        lbs,
+        gallons,
+        oz,
+        kgs,
+        @case,
+        unit
     }
 
-    public class ShoppingListItem
+    public class ShoppingListItem : IEntityBase
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
         public UnitOfMeasurement? UnitOfMeasurement { get; set; }
         public string Description { get; set; }
-
-        public byte[] RowVersion { get; set; }
     }
 }

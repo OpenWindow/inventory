@@ -1,4 +1,4 @@
-﻿using Inventory.Data.Models;
+﻿using Inventory.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +16,8 @@ namespace Inventory.Data
         Task<bool> SaveAllSync();
 
         // Categories
-        IEnumerable<InventoryCategory> GetAllCategories();
-        InventoryCategory GetInventoryCategory(int id);
+        IEnumerable<Category> GetAllCategories();
+        Category GetInventoryCategory(int id);
 
         // Inventory Items
         IEnumerable<InventoryItem> GetAllInventoryItems();
