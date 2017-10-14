@@ -1,4 +1,6 @@
-﻿using Inventory.Data;
+﻿using AutoMapper;
+using Inventory.Api.Dto;
+using Inventory.Data;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,30 +21,34 @@ namespace Inventory.Api.Controllers
         [HttpGet("{categoryId}/inventoryitems")]
         public IActionResult Get(int categoryId)
         {
-            var category = this._context.InventoryCategories.FirstOrDefault(c => c.ID == categoryId);
-            if(category == null)
+            var categoryFromRepo = this._context.Categories.FirstOrDefault(c => c.ID == categoryId);
+            if(categoryFromRepo == null)
             {
                 return NotFound();
             }
+
+            var itemsFromRepo = categoryFromRepo.InventoryItems;
+            var items = Mapper.Map<IEnumerable<InventoryItemDto>>(itemsFromRepo);
             
-            return Ok(category.InventoryItems);
+            return Ok(items);
         }
 
         [HttpGet("{categoryId}/inventoryitems/{itemId}")]
         public IActionResult GetInventoryItem(int categoryId, int itemId)
         {
-            var category = _context.InventoryCategories.FirstOrDefault(c => c.ID == categoryId);
+            var category = _context.Categories.FirstOrDefault(c => c.ID == categoryId);
             if(category == null)
             {
                 return NotFound();
             }
 
-            var item = category.InventoryItems.FirstOrDefault(i => i.InventoryItemID == itemId);
-            if(item == null)
+            var itemFromRepo = category.InventoryItems.FirstOrDefault(i => i.ID == itemId);
+            if(itemFromRepo == null)
             {
                 return NotFound();
             }
 
+            var item = Mapper.Map<InventoryItemDto>(itemFromRepo);
             return Ok(item);
         }
 

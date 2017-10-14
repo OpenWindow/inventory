@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Inventory.Entities
+namespace Inventory.Api.Dto
 {
-    public class InventoryItem : IEntityBase
+    public class InventoryItemDto
     {
         public int ID { get; set; }
         public int CategoryID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        public int PurchasedDaysAgo { get; set; }
         public DateTimeOffset PurchaseDate { get; set; }
         public string PreviewImageUrl { get; set; }
-
-        public Category Category { get; set; }
     }
 }

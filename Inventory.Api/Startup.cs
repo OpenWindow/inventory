@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Inventory.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Inventory.Data;
+using Inventory.Entities;
+using Inventory.Api.Dto;
+using Inventory.Api.Helpers;
 
 namespace Inventory.Api
 {
@@ -54,6 +56,16 @@ namespace Inventory.Api
             {
                 app.UseExceptionHandler();
             }
+
+            // automapper configuration
+            AutoMapper.Mapper.Initialize(cfg => {
+                cfg.CreateMap<Category, CategoryDto>();
+
+                cfg.CreateMap<InventoryItem, InventoryItemDto>()
+                .ForMember(t => t.PurchasedDaysAgo, opt => opt.MapFrom(s => s.PurchaseDate.GetDaysAgo()));
+
+                cfg.CreateMap<ShoppingListItem, ShoppingListItemDto>();
+                });
 
             // Just add unparameterized version of UseMvc method which
             // does not add any conventional routes to the app. Web Api

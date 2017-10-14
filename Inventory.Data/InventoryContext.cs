@@ -12,14 +12,14 @@ namespace Inventory.Data
 
         }
 
-        public DbSet<Category> InventoryCategories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<InventoryItem> InventoryItems { get; set; }
         public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             // overrider the table names created from DbSet Property names
-            builder.Entity<Category>().ToTable("InventoryCategory");
+            builder.Entity<Category>().ToTable("Category");
             builder.Entity<InventoryItem>().ToTable("InventoryItem");
             builder.Entity<ShoppingListItem>().ToTable("ShoppingList");
 
