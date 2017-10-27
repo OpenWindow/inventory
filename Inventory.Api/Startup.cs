@@ -13,6 +13,8 @@ using Inventory.Data;
 using Inventory.Entities;
 using Inventory.Api.Dto;
 using Inventory.Api.Helpers;
+using MediatR;
+using System.Reflection;
 
 namespace Inventory.Api
 {
@@ -40,6 +42,13 @@ namespace Inventory.Api
 
             services.AddWebApi();
 
+            // register mediatR
+            services.AddScoped<IMediator, Mediator>();
+            services.AddTransient<SingleInstanceFactory>(sp => t => sp.GetService(t));
+            services.AddTransient<MultiInstanceFactory>(sp => t => sp.GetServices(t));
+            services.AddMediatorHandlers(typeof(Startup).GetTypeInfo().Assembly);
+
+
             services.AddSingleton<IConfigurationRoot>(Configuration);
         }
 
@@ -57,16 +66,7 @@ namespace Inventory.Api
                 app.UseExceptionHandler();
             }
 
-            // automapper configuration
-            AutoMapper.Mapper.Initialize(cfg => {
-                cfg.CreateMap<Category, CategoryDto>();
-
-                cfg.CreateMap<InventoryItem, InventoryItemDto>()
-                .ForMember(t => t.PurchasedDaysAgo, opt => opt.MapFrom(s => s.PurchaseDate.GetDaysAgo()));
-
-                cfg.CreateMap<ShoppingListItem, ShoppingListItemDto>();
-                });
-
+            app.UseStatusCodePages();
             // Just add unparameterized version of UseMvc method which
             // does not add any conventional routes to the app. Web Api
             // uses attribute routing. No need of conventional routes
