@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 namespace Inventory.Api.Controllers
 {
 
-    public class InventoryCatergoryController : ControllerBase
+    public class InventoryCatergoryApiController : ControllerBase
     {
 
         private readonly IMediator _mediator;
 
-        public InventoryCatergoryController(IMediator mediator)
+        public InventoryCatergoryApiController(IMediator mediator)
         {
             this._mediator = mediator;
         }

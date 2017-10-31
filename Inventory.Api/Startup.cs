@@ -40,7 +40,7 @@ namespace Inventory.Api
 
             // Composition root (creating object graphs)
 
-            services.AddWebApi();
+            services.AddMvc();
 
             // register mediatR
             services.AddScoped<IMediator, Mediator>();
@@ -67,10 +67,15 @@ namespace Inventory.Api
             }
 
             app.UseStatusCodePages();
-            // Just add unparameterized version of UseMvc method which
-            // does not add any conventional routes to the app. Web Api
-            // uses attribute routing. No need of conventional routes
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+            });
         }
     }
 }

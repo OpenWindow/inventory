@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace Inventory.Api.Controllers
 {
     [Route("api/categories")]
-    public class InventoryItemsController : ControllerBase
+    public class InventoryItemsApiController : ControllerBase
     {
         private readonly InventoryContext _context;
-        public InventoryItemsController(InventoryContext context)
+        public InventoryItemsApiController(InventoryContext context)
         {
             this._context = context;
         }
