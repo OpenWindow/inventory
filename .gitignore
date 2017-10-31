@@ -14,7 +14,7 @@
 */**/bin
 
 # dependencies
-/node_modules
+node_modules/
 
 # IDEs and editors
 /.idea
@@ -51,4 +51,4 @@ testem.log
 Thumbs.db
 
 
-/InventoryAngular/node_modules/live-server/node_modules
+
