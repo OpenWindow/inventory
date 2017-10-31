@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryAngular", "InventoryAngular\InventoryAngular.csproj", "{A2257933-26D3-4E86-8D79-A16A54C920DC}"
 EndProject
@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Api", "Inventory.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Data", "Inventory.Data\Inventory.Data.csproj", "{55F472B6-0CDE-4074-9073-DFADFA86964B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Entities", "Inventory.Entities\Inventory.Entities.csproj", "{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.Entities", "Inventory.Entities\Inventory.Entities.csproj", "{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{EC34E9B0-5278-4076-84E4-9B3994EE8940}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{63E83F73-9A43-44BF-8838-B2A443296C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Api.UnitTest", "Inventory.Api.UnitTest\Inventory.Api.UnitTest.csproj", "{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,20 @@ Global
 		{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2257933-26D3-4E86-8D79-A16A54C920DC} = {EC34E9B0-5278-4076-84E4-9B3994EE8940}
+		{F2022458-B1A3-4C50-A13B-0355EB85E202} = {EC34E9B0-5278-4076-84E4-9B3994EE8940}
+		{55F472B6-0CDE-4074-9073-DFADFA86964B} = {EC34E9B0-5278-4076-84E4-9B3994EE8940}
+		{9C7F8ED6-2636-42FD-98E8-F0607F87CDBB} = {EC34E9B0-5278-4076-84E4-9B3994EE8940}
+		{0A4BD71B-4185-4BC5-A012-7E4BA277CAD5} = {63E83F73-9A43-44BF-8838-B2A443296C78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B7D2525-77AA-40C9-BF2E-3E731F592410}
